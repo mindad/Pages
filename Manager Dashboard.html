@@ -20,7 +20,7 @@
             let ctx_rightTop = document.getElementById('myChart').getContext('2d');
             let ctx_leftTop = document.getElementById('myChartSecond').getContext('2d');    
             let ctx_rightBottom = document.getElementById('myChartBottom').getContext('2d');
-            let ctx_leftBottom = document.getElementById('myChartSecondBottom').getContext('2d');
+            let ctx_leftBottom = document.getElementById('myChartSecondBottom').getContext('2d'); // horizontalBar
         
         var crt_rightTop = new Chart(ctx_rightTop, {
             type: 'bar',
@@ -109,12 +109,12 @@
                 },
                 scales: {
                     yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        },
-                        type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                        display: true,
-                        position: 'left',
+                        // ticks: {
+                        //     beginAtZero: true
+                        // },
+                        // type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                        // // display: true,
+                        // position: 'left',
                         id: 'y-axis-1'
                     }, 
                     {
@@ -397,11 +397,11 @@
                 'rgba(54, 162, 235, 0.2)',
                 'rgba(75, 192, 192, 0.2)'
             ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(75, 192, 192, 1)'
-            ],
+            // borderColor: [
+            //     'rgba(255, 99, 132, 1)',
+            //     'rgba(54, 162, 235, 1)',
+            //     'rgba(75, 192, 192, 1)'
+            // ],
             borderWidth: 1
         }]
     },
@@ -422,93 +422,12 @@
         }
     }
 });
-        // var crt_rightBottom = new Chart(ctx_leftBottom, { // orders
-        //     type: 'bar',
-        //     // data: feed Data Here
-        //     data: {
-        //         //labels: ['Red', 'Blue', 'Green'],
-        //         datasets: [{
-        //             label: 'Kegs 20',
-        //             data: [12],
-        //             backgroundColor: [
-        //                 'rgba(255, 99, 132, 0.2)'
-        //                 // 'rgba(54, 162, 235, 0.2)',
-        //                 // 'rgba(75, 192, 192, 0.2)'
-        //             ],
-        //             borderColor: [
-        //                 'rgba(255, 99, 132, 1)'
-        //                 // 'rgba(54, 162, 235, 1)',
-        //                 // 'rgba(75, 192, 192, 1)'
-        //             ],
-        //             borderWidth: 1,
-        //             yAxisID: 'y-axis-1'
-        //         },
-        //         {
-        //             label: 'Kegs 30',
-        //             data: [19],
-        //             backgroundColor: 'rgba(54, 162, 235, 0.2)',
-        //             borderColor: 'rgba(54, 162, 235, 1)',
-        //             borderWidth: 1,
-        //             yAxisID: 'y-axis-2'
-        //         },
-        //         {
-        //             label: 'Bottle Cases',
-        //             data: [7.3],
-        //             backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        //             borderColor: 'rgba(75, 192, 192, 1)',
-        //             borderWidth: 1,
-        //             yAxisID: 'y-axis-3'
-        //         }
-        //         ]
-        //     },
-        //     options: {
-        //         responsive: true,
-        //         title: {
-		// 				display: true,
-		// 				text: 'Orders'
-		// 			},
-        //         tooltips: {
-        //             mode: 'index',
-        //             intersect: true
-        //         },
-        //         scales: {
-        //             yAxes: [{
-        //                 ticks: {
-        //                     beginAtZero: true
-        //                 },
-        //                 type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-        //                 display: true,
-        //                 position: 'left',
-        //                 id: 'y-axis-1'
-        //             },
-        //             {
-        //                 ticks: {
-        //                     beginAtZero: true
-        //                 },
-        //                 type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-        //                 display: true,
-        //                 position: 'left',
-        //                 id: 'y-axis-2'
-        //             },
-        //             {
-        //                 ticks: {
-        //                     beginAtZero: true
-        //                 },
-        //                 type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-        //                 display: true,
-        //                 position: 'left',
-        //                 id: 'y-axis-3'
-        //             }
-        //             ]
-        //         }
-        //     }
-        // });
+        
 
 
-        //$('#toastdiv').on('show.bs.toast')
-        $('.toast').toast('show');
+        $('.toast').toast('show'); // Shows toast without event!!! very important!!
 
-        $('.toast').on('hide.bs.toast', function (){
+        $('.toast').on('hide.bs.toast', function (){ // when trying to delete a toast
             if (confirm('are you sure yow want to delete this alert?')) {
                 
             }
@@ -603,7 +522,7 @@
 
             <div class="col-3">
 
-                <h4>Time Till Next Order:</h4>
+                <h4 class="text-center">Time Till Next Order:</h4>
 
                 <div class="progress">
                     <div class="progress-bar w-75" role="progressbar" style="width: 25%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">6 days</div>
