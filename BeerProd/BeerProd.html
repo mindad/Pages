@@ -1,26 +1,61 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="utf-8" />
-    <title></title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <style src="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"></style>
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <title>Brewmiester Production</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet"/>
+
+
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            try {
+                $('#example').DataTable();
+            }
+
+            catch (err) {
+                alert(err);
+            }
+
+        });
+
+
+    </script>
+
 
 
     <style>
-     
         body {
-            margin: 0;
-            padding: 0;
+            /* margin: 0; */
+            /* padding: 0; */
             background-color: #f7f6f6;
+            padding-bottom: 1%;
+        }
+
+        #headerRow {
+            height: 180px;
+        }
+
+        .navbar {
+            height: 70px;
         }
 
         table {
@@ -32,33 +67,28 @@
             margin-top: 100px;
         }
 
-
-        body {
-            background-color: #f7f6f6;
-        }
-
-        table.dataTable {
+        /* table.dataTable {
             width: 100%;
             margin: 0 auto;
             clear: both;
             border-collapse: separate;
             border-spacing: 0
+        } */
+
+        #addprod {
+            margin: auto;
+            width: 60%;
+            border: solid 2px;
+            background-color: aliceblue;
         }
-        #addprod{
-           
-            margin:auto;
-        width:60%;
-         border:solid 2px ;
-         background-color:aliceblue;
+
+        .container {
+            padding-bottom: 4%;
         }
     </style>
-    <script>
 
-        $(document).ready(function () {
-            $('#example').DataTable();
-        });
-    </script>
 </head>
+
 <body>
     <!-- NavBar Template -->
     <div class="header text-center">
@@ -66,7 +96,7 @@
         <nav class="navbar navbar-expand-lg navbar-light border-bottom" style="background-color: #f7f6f6;">
             <a class="navbar-brand" href="#">Home</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -75,7 +105,7 @@
                         <a class="nav-link" href="#">Production</a>
                     </li>
                     <li class="nav-item active px-2">
-                        <a class="nav-link" href="#">Waste</a>
+                        <a class="nav-link" href="#">Inventory</a>
                     </li>
                     <li class="nav-item active px-2">
                         <a class="nav-link" href="#">Waste</a>
@@ -83,13 +113,9 @@
                     <li class="nav-item active px-2">
                         <a class="nav-link" href="#">Alerts</a>
                     </li>
-                    <li class="nav-item active px-2">
-                        <a class="nav-link" href="#">Inventory</a>
-                    </li>
-            
                     <!-- <li class="nav-item">
-                      <a class="nav-link disabled" href="#">Disabled</a>
-                    </li> -->
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li> -->
                 </ul>
             </div>
             <a class="navbar-brand" href="#">
@@ -97,98 +123,119 @@
             </a>
         </nav>
     </div>
-   
-    <br /><br />
+    <br><br>
+    <!-- NavBar Template -->
 
-    <table id="example" class="display" border="1" style="width:100%">
-        <thead style="background-color:cornflowerblue">
-            <tr>
-                <th>Beer Type</th>
-                <th>Item in Recipe</th>
-                <th>Date</th>
-                <th>Batch #</th>
+    <!-- table -->
+    <div class="container">
+        <table id="example" class="display" border="1" style="width:100%">
+            <thead style="background-color:cornflowerblue">
+                <tr>
+                    <th>Beer Type</th>
+                    <th>Item in Recipe</th>
+                    <th>Date</th>
+                    <th>Batch #</th>
 
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Green</td>
-                <td>Hops A,Malt C, Minerals B,Malt A, Kshut B</td>
-                <td>22/1/2019</td>
-                <td>4</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>IPA</td>
+                    <td>Hops A, Malt C, Minerals B, Malt C, Hops A</td>
+                    <td>25/1/2019</td>
+                    <td>1</td>
 
-            </tr>
-            <tr>
-                <td>Black</td>
-                <td>Hops A,Malt C, Minerals B,Malt C, Kshut A</td>
-                <td>22/1/2019</td>
-                <td>3</td>
+                </tr>
+                <tr>
+                    <td>Blazer</td>
+                    <td>Hops A, Malt C, Minerals B, Malt C, Hops A</td>
+                    <td>25/1/2019</td>
+                    <td>1</td>
 
-            </tr>
-            <tr>
-                <td>Blonde</td>
-                <td>Hops A,Malt C, Minerals B,Malt C, Kshut A</td>
-                <td>24/1/2019</td>
-                <td>2</td>
+                </tr>
+                <tr>
+                    <td>Green</td>
+                    <td>Hops A, Malt C, Minerals B, Malt A, Hops B</td>
+                    <td>22/1/2019</td>
+                    <td>4</td>
 
-            </tr>
-            <tr>
-                <td>Ambre</td>
-                <td>Hops A,Malt C, Minerals B,Malt C, Kshut A</td>
-                <td>25/1/2019</td>
-                <td>1</td>
+                </tr>
+                <tr>
+                    <td>Black</td>
+                    <td>Hops A, Malt C, Minerals B, Malt C, Hops A</td>
+                    <td>22/1/2019</td>
+                    <td>3</td>
 
-            </tr>
+                </tr>
+                <tr>
+                    <td>Blonde</td>
+                    <td>Hops A, Malt C, Minerals B, Malt C, Hops A</td>
+                    <td>24/1/2019</td>
+                    <td>2</td>
+
+                </tr>
+                <tr>
+                    <td>Ambree</td>
+                    <td>Hops A, Malt C, Minerals B, Malt C, Hops A</td>
+                    <td>25/1/2019</td>
+                    <td>1</td>
+
+                </tr>
 
 
-        </tbody>
-        <tfoot>
-            <tr>
-                <th>Beer Type</th>
-                <th>Item in Recipe</th>
-                <th>Date</th>
-                <th>Batch #</th>
-            </tr>
-        </tfoot>
-    </table>
-    <br />
-    <br />
-    <br />
-    <br />
-
-    <div id="addprod" >
-        <br />
-        <form action="/action_page.php">
-            <select name="Beer">
-                <option value="">Beer Type</option>
-                <option value="">Blonde</option>
-                <option value="">Ambree</option>
-                <option value="">Green</option>
-                <option value="">Black</option>
-            </select>
-            <br /><br />
-            <label>Choose date</label>
-            <input type="date" name="bday">
-            <br><br>
-            <label>US Malt 1</label>
-            <input type="text" value="200" />
-            <br><br>
-            <label>EU Malt 2</label>
-            <input type="text" value="400" />
-            <br><br>
-            <label>Hops A</label>
-            <input type="text" value="80" />
-            <br><br>
-            <label>Yeast B</label>
-            <input type="text" value="70" />
-            <br />
-            <br />
-            <input type="submit">
-            <br />
-            <br />
-        </form>
-
+            </tbody>
+            <!-- <tfoot>
+                    <tr>
+                        <th>Beer Type</th>
+                        <th>Item in Recipe</th>
+                        <th>Date</th>
+                        <th>Batch #</th>
+                    </tr>
+            </tfoot> -->
+        </table> 
     </div>
+    <!-- table -->
+
+
+    <!-- Add Product --> 
+    <div class="container" hidden>
+        <div id="addprod">
+            <br />
+            <form action="/action_page.php">
+                <select name="Beer">
+                    <option value="">Beer Type</option>
+                    <option value="">Blonde</option>
+                    <option value="">Ambree</option>
+                    <option value="">Green</option>
+                    <option value="">Black</option>
+                </select>
+                <br /><br />
+                <label>Choose date</label>
+                <input type="date" name="bday">
+                <br><br>
+                <label>US Malt 1</label>
+                <input type="text" value="200" />
+                <br><br>
+                <label>EU Malt 2</label>
+                <input type="text" value="400" />
+                <br><br>
+                <label>Hops A</label>
+                <input type="text" value="80" />
+                <br><br>
+                <label>Yeast B</label>
+                <input type="text" value="70" />
+                <br />
+                <br />
+                <input type="submit">
+                <br />
+                <br />
+            </form>
+
+        </div>
+    </div>
+    <!-- Add Product -->
+
 
 </body>
+
 </html>
