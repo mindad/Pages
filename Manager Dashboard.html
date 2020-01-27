@@ -19,78 +19,77 @@
 
             let ctx_rightTop = document.getElementById('myChart').getContext('2d');
             let ctx_leftTop = document.getElementById('myChartSecond').getContext('2d');    
-            let ctx_rightBottom = document.getElementById('myChartBottom').getContext('2d');
-            let ctx_leftBottom = document.getElementById('myChartSecondBottom').getContext('2d'); // horizontalBar
+            let ctx_rightBottom = document.getElementById('myChartBottom').getContext('2d'); // horizontalBar
+            let ctx_leftBottom = document.getElementById('myChartSecondBottom').getContext('2d'); 
         
-        var crt_rightTop = new Chart(ctx_rightTop, {
+        // Beer Stock (Daily)
+        var crt_leftTop = new Chart(ctx_rightTop, {
             type: 'bar',
             // data: feed Data Here
             data: {
                 labels: ['Blonde', 'Ambree', 'Blazer', 'Green', 'IPA', 'Black'],
                 datasets: [{
                     label: 'Kegs 20',
-                    data: [12, 19, 3, 5, 2, 3],
+                    data: [12, 18.2, 3, 5, 6, 3],
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(255, 99, 132, 0.6)'
                     ],
                     borderColor: [
                         'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(255, 99, 132, 1)'
                     ],
                     borderWidth: 1,
                     yAxisID: 'y-axis-1'
                 },
                 {
                     label: 'Kegs 30',
-                    data: [13, 19, 3, 5, 2, 3],
+                    data: [13, 9.2, 3, 7, 2, 3],
                     backgroundColor: [
-                        //'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(54, 162, 235, 0.6)'
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)',
                         'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(54, 162, 235, 1)'
                     ],
                     borderWidth: 1,
                     yAxisID: 'y-axis-2'
                 },
                 {
                     label: 'Bottle Cases',
-                    data: [15, 19, 3, 5, 2, 3],
+                    data: [15, 6, 3, 5, 2, 3],
                     backgroundColor: [
-                        //'rgba(255, 99, 132, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
+                        'rgba(153, 102, 255, 0.6)',
+                        'rgba(153, 102, 255, 0.6)',
+                        'rgba(153, 102, 255, 0.6)',
+                        'rgba(153, 102, 255, 0.6)',
+                        'rgba(153, 102, 255, 0.6)',
+                        'rgba(153, 102, 255, 0.6)',
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
                         'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(153, 102, 255, 1)',
                     ],
                     borderWidth: 1,
                     yAxisID: 'y-axis-3'
@@ -109,25 +108,29 @@
                 },
                 scales: {
                     yAxes: [{
-                        // ticks: {
-                        //     beginAtZero: true
+                        ticks: {
+                            beginAtZero: true,
+                        },
+                        type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                        display: true,
+                        position: 'left',
+                        // gridLines : {
+                        //     display : false
                         // },
-                        // type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                        // // display: true,
-                        // position: 'left',
                         id: 'y-axis-1'
                     }, 
                     {
                         ticks: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            display: false // left / right axis
                         },
                         type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-							display: true,
-							position: 'right',
-							id: 'y-axis-2',
-							gridLines: {
-								drawOnChartArea: false
-							}
+                        display: true,
+                        position: 'right',
+                        gridLines : {
+                            display : false  // the vertical lines inside the chart itself
+                        },
+                        id: 'y-axis-2',
                     },
                     {
                         ticks: {
@@ -136,82 +139,84 @@
                         type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
                         display: true,
                         position: 'right',
-                        id: 'y-axis-3'
+                        gridLines : {
+                            display : false // the vertical lines inside the chart itself
+                        },
+                        id: 'y-axis-3',
                     }
                     ]
                 }
             }
         });
 
-        var crt_leftTop = new Chart(ctx_leftTop, {
+        // Beer Stock
+        var crt_rightTop = new Chart(ctx_leftTop, {
             type: 'bar',
             // data: feed Data Here
             data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: ['Blonde', 'Ambree', 'Blazer', 'Green', 'IPA', 'Black'],
                 datasets: [{
                     label: 'Kegs 20',
-                    data: [12, 19, 3, 5, 2, 3],
+                    data: [12, 6, 3, 5, 13, 8],
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
+                        'rgba(255, 159, 64, 0.6)',
+                        'rgba(255, 159, 64, 0.6)',
+                        'rgba(255, 159, 64, 0.6)',
+                        'rgba(255, 159, 64, 0.6)',
+                        'rgba(255, 159, 64, 0.6)',
+                        'rgba(255, 159, 64, 0.6)',
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255, 159, 64, 1)',
                     ],
                     borderWidth: 1,
                     yAxisID: 'y-axis-1'
                 },
                 {
                     label: 'Kegs 30',
-                    data: [13, 19, 3, 5, 2, 3],
+                    data: [13, 19, 6.6, 5, 8.9, 3],
                     backgroundColor: [
-                        //'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(75, 192, 192, 0.6)',
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
                         'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(75, 192, 192, 1)',
                     ],
                     borderWidth: 1,
                     yAxisID: 'y-axis-2'
                 },
                 {
                     label: 'Bottle Cases',
-                    data: [15, 19, 3, 5, 2, 3],
+                    data: [15, 14.5, 3, 5, 2, 3],
                     backgroundColor: [
-                        //'rgba(255, 99, 132, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
                         'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(255, 206, 86, 1)',
                     ],
                     borderWidth: 1,
                     yAxisID: 'y-axis-3'
@@ -240,15 +245,16 @@
                     }, 
                     {
                         ticks: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            display: false // removes the axis bars from the left / right
                         },
                         type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-							display: true,
-							position: 'right',
-							id: 'y-axis-2',
-							gridLines: {
-								drawOnChartArea: false
-							}
+                        display: true,
+                        position: 'right',
+                        id: 'y-axis-2',
+                        gridLines : {
+                            display : false  // the vertical lines inside the chart itself
+                        },
                     },
                     {
                         ticks: {
@@ -257,82 +263,84 @@
                         type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
                         display: true,
                         position: 'right',
-                        id: 'y-axis-3'
+                        id: 'y-axis-3',
+                        gridLines : {
+                            display : false  // the vertical lines inside the chart itself
+                        },
                     }
                     ]
                 }
             }
         });
-
-        var crt_leftBottom = new Chart(ctx_rightBottom, {
+        
+        // Labels & Boxes
+        var crt_leftBottom = new Chart(ctx_rightBottom, { 
             type: 'bar',
             // data: feed Data Here
             data: {
                 labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
                 datasets: [{
-                    label: 'Kegs 20',
-                    data: [12, 19, 3, 5, 2, 3],
+                    label: 'Front',
+                    data: [12, 14, 3, 5, 2, 3],
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
+                        'rgba(153, 102, 255, 0.6)', 
+                        'rgba(153, 102, 255, 0.6)', 
+                        'rgba(153, 102, 255, 0.6)', 
+                        'rgba(153, 102, 255, 0.6)', 
+                        'rgba(153, 102, 255, 0.6)', 
+                        'rgba(153, 102, 255, 0.6)', 
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
                         'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(153, 102, 255, 1)',
                     ],
                     borderWidth: 1,
                     yAxisID: 'y-axis-1'
                 },
                 {
-                    label: 'Kegs 30',
-                    data: [13, 19, 3, 5, 2, 3],
+                    label: 'Back',
+                    data: [13, 19, 12, 5, 2, 3],
                     backgroundColor: [
-                        //'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)',
                         'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(54, 162, 235, 1)',
                     ],
                     borderWidth: 1,
                     yAxisID: 'y-axis-2'
                 },
                 {
-                    label: 'Bottle Cases',
-                    data: [15, 19, 3, 5, 2, 3],
+                    label: 'Neck',
+                    data: [15, 5, 3, 14, 2, 16],
                     backgroundColor: [
-                        //'rgba(255, 99, 132, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
+                        'rgba(255, 159, 64, 0.6)',
+                        'rgba(255, 159, 64, 0.6)',
+                        'rgba(255, 159, 64, 0.6)',
+                        'rgba(255, 159, 64, 0.6)',
+                        'rgba(255, 159, 64, 0.6)',
+                        'rgba(255, 159, 64, 0.6)',
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255, 159, 64, 1)',
                     ],
                     borderWidth: 1,
                     yAxisID: 'y-axis-3'
@@ -361,15 +369,16 @@
                     }, 
                     {
                         ticks: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            display: false // left / right axis
                         },
                         type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-							display: true,
-							position: 'right',
-							id: 'y-axis-2',
-							gridLines: {
-								drawOnChartArea: false
-							}
+                        display: true,
+                        position: 'right',
+                        id: 'y-axis-2',
+						gridLines : {
+                            display : false  // the vertical lines inside the chart itself
+                        },	
                     },
                     {
                         ticks: {
@@ -378,30 +387,33 @@
                         type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
                         display: true,
                         position: 'right',
-                        id: 'y-axis-3'
+                        id: 'y-axis-3',
+                        gridLines : {
+                            display : false  // the vertical lines inside the chart itself
+                        },
                     }
                     ]
                 }
             }
         });
 
-
+        // Orders
         var crt_rightBottom = new Chart(ctx_leftBottom, { // orders
-            type: 'bar',
+            type: 'horizontalBar',
             data: {
         labels: ['Kegs20', 'Kegs30', 'Bottle Cases'],
         datasets: [{
-            data: [12, 19, 7.6],
+            data: [10, 8.6, 9.2],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(75, 192, 192, 0.2)'
+                'rgba(255, 99, 132, 0.6)',
+                'rgba(54, 162, 235, 0.6)',
+                'rgba(75, 192, 192, 0.6)'
             ],
-            // borderColor: [
-            //     'rgba(255, 99, 132, 1)',
-            //     'rgba(54, 162, 235, 1)',
-            //     'rgba(75, 192, 192, 1)'
-            // ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(75, 192, 192, 1)'
+            ],
             borderWidth: 1
         }]
     },
@@ -441,6 +453,22 @@
     <style>
     body{
         background-color: #f7f6f6;
+        padding-bottom: 1%;
+    }
+    h4{
+        padding-bottom: 5%;
+    }
+    .navbar{
+        height: 70px;
+    }
+    #selectRow{
+        padding-top: 2%;
+    }
+    #headerRow{
+        height: 180px;
+    }
+    .toast{
+        height: 80px;
     }
     </style>
 
@@ -492,7 +520,7 @@
     
     <div class="container">
         <!-- toast Div -->
-        <div class="row">
+        <div class="row" id="headerRow">
             <div class="col-4" id="toastdiv"> 
                 <!-- <div class="alert alert-secondary" role="alert">This is a secondary alert—check it out!</div>
                 <div class="alert alert-danger" role="alert">This is a danger alert—check it out!</div>
@@ -554,8 +582,8 @@
                 <canvas id="myChartBottom" class="border border-secondary"></canvas>
             </div>
             <div class="col-6">
-                <canvas id="myChartSecondBottom" class="border border-secondary"></canvas><br>
-                <div class="row">
+                <canvas id="myChartSecondBottom" class="border border-secondary"></canvas>
+                <div class="row" id="selectRow">
                     <div class="col-4"></div>
                     <div class="col-4">
                         <select class="custom-select bg-primary text-dark">
@@ -567,7 +595,6 @@
                     </div>
                     <div class="col-4"></div>
                 </div>
-                
                 
             </div>
         </div>
